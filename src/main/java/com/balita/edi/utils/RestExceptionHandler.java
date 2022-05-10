@@ -1,4 +1,4 @@
-package com.balita.edi.tasks.tasks;
+package com.balita.edi.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -9,9 +9,9 @@ import org.springframework.web.context.request.WebRequest;
 @RestControllerAdvice
 @Slf4j
 public class RestExceptionHandler {
-    @ExceptionHandler(value = {TaskNotFoundException.class})
-    public ResponseEntity vehicleNotFound(TaskNotFoundException ex, WebRequest request) {
-        log.debug("handling VehicleNotFoundException...");
+    @ExceptionHandler(value = {EntityNotFoundException.class})
+    public ResponseEntity entityNotFound(EntityNotFoundException ex, WebRequest request) {
+        log.debug("handling EntityNotFoundException...");
         return ResponseEntity.notFound().build();
     }
 }
